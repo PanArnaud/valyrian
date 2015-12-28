@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		
+	</head>
+	<body>
+		<div id="result">
+			
+		</div>
+		
+	</body>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="valyrian.js">
+	</script>
+	<script>
+		var names = generateNames();
+		var listNames = "";		
+		for(var i = 0; i < names.length; i++){
+			listNames += "<li>" + names[i] + "</li>";
+		}
+		document.getElementById("result").innerHTML = listNames;
+	</script>
+</html>
