@@ -2,23 +2,20 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<title>Document</title>
-		
+		<title>Valyrian Names Generator</title>
 	</head>
 	<body>
-		<div id="result">
-			
-		</div>
-		
+		<div id="result"><div>
 	</body>
+<<<<<<< HEAD
 	<script type="text/javascript" src="valyrian.js">
 	</script>
+=======
+	<script src="valyrian.js"></script>
+>>>>>>> origin/master
 	<script>
-		var names = generateNames();
-		var listNames = "";		
-		for(var i = 0; i < names.length; i++){
-			listNames += "<li>" + names[i] + "</li>";
-		}
-		document.getElementById("result").innerHTML = listNames;
+		var val = new Valyrian(2, 5);
+		val.generateNames(5);
+		val.appendTo(document.getElementById("result"));
 	</script>
 </html>
