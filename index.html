@@ -29,53 +29,42 @@
       </header>
       <section>
         <h3>
-<a id="welcome-to-valyrian" class="anchor" href="#welcome-to-valyrian" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to valyrian</h3>
+<a id="welcome-to-valyrian" class="anchor" href="#welcome-to-valyrian" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to valyrian</h3>
 
 <p>Generate cool and unique names with javascript</p>
 
 <h3>
-<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h3>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h3>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id="result"&gt;
-
-    &lt;/div&gt;
-
-&lt;/body&gt;
-&lt;script src="http://code.jquery.com/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="valyrian.js"&gt;
-&lt;/script&gt;
-&lt;script&gt;
-    var names = generateNames();
-    var listNames = "";     
-    for(var i = 0; i &lt; names.length; i++){
-        listNames += "&lt;li&gt;" + names[i] + "&lt;/li&gt;";
-    }
-    document.getElementById("result").innerHTML = listNames;
-&lt;/script&gt;
-&lt;/html&gt;
+<pre><code>var val = new Valyrian(2, 4);
+val.generateNames();
 </code></pre>
 
-<p>The <strong>generatesNames(time, sylMin, sylMax);</strong> function can accept 3 arguments :</p>
+<p>The <strong>generatesNames(sylMin, sylMax);</strong> function can accept 2 arguments :</p>
 
 <ul>
-<li>
-<strong>times</strong>: to set how many names you want. (Default: 10)</li>
 <li>
 <strong>sylMin</strong>: set the minimum syllables in your names (Default: 2)</li>
 <li>
 <strong>sylMax</strong>: set the maximum syllables in your names (Default: 3)</li>
 </ul>
 
+<p>You can change how many names you want by editing:</p>
+
+<pre><code>Valyrian.prototype.generateNames = function(nb) {
+    var names = [],
+    nb    = nb || 10; // Here
+
+    for (var i = 0; i &lt; nb; ++i) {
+    names.push(this.createNewName(this.sylMin, this.sylMax));
+    }
+    this.names = names;
+    return this.names;
+};
+</code></pre>
+
 <h3>
-<a id="feel-free-to-fork-it-" class="anchor" href="#feel-free-to-fork-it-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feel free to fork it !</h3>
+<a id="feel-free-to-fork-it-" class="anchor" href="#feel-free-to-fork-it-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feel free to fork it !</h3>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/PanArnaud">PanArnaud</a></p>
