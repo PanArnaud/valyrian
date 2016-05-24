@@ -26,8 +26,9 @@
 
         <section id="main_content">
           <div id="result"></div>
+          <a href="">Re-Generate !</a>
         </section>
-  
+
         <hr>
 
         <section id="downloads" class="clearfix">
@@ -47,11 +48,11 @@
           <h3>
           <a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h3>
 
-          <pre><code>var val = new Valyrian(2, 4);
-          val.generateNames();
+          <pre><code>var val = new Valyrian(2, 5);
+          val.generateNames(5);
           </code></pre>
 
-          <p>The <strong>generatesNames(sylMin, sylMax);</strong> function can accept 2 arguments :</p>
+          <p>The <strong>Valyrian(sylMin, sylMax)</strong> function can accept 2 arguments :</p>
 
           <ul>
           <li>
@@ -60,18 +61,9 @@
           <strong>sylMax</strong>: set the maximum syllables in your names (Default: 3)</li>
           </ul>
 
-          <p>You can change how many names you want by editing:</p>
+          <p>You can change how many names you want by editing the <em>n</em> value:</p>
 
-          <pre><code>Valyrian.prototype.generateNames = function(nb) {
-              var names = [],
-              nb    = nb || 10; // Here
-
-              for (var i = 0; i &lt; nb; ++i) {
-              names.push(this.createNewName(this.sylMin, this.sylMax));
-              }
-              this.names = names;
-              return this.names;
-          };
+          <pre><code>val.generateNames(n)
           </code></pre>
 
           <h3>
@@ -89,8 +81,6 @@
     <script type="text/javascript" src="javascripts/valyrian.js">
     </script>
     <script type="text/javascript">
-      alert("hey");
-
       var val = new Valyrian(2, 5);
       val.generateNames(5);
       val.appendTo(document.getElementById("result"));
