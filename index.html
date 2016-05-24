@@ -10,6 +10,8 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
+
     <title>Valyrian by PanArnaud</title>
   </head>
 
@@ -85,11 +87,11 @@
         
       </div>
     </div>
+    <script type="text/javascript" src="javascript/valyrian.js">
+      var val = new Valyrian(2, 5);
+      val.generateNames(5);
+      val.appendTo(document.getElementById("result"));
+    </script>
   </body>
-  <script type="text/javascript" src="javascript/valyrian.js">
-  alert('go');
-    var val = new Valyrian(2, 5);
-    val.generateNames(5);
-    val.appendTo(document.getElementById("result"));
-  </script>
+  
 </html>
