@@ -1,5 +1,5 @@
 # valyrian
-A name generator in javascript
+A name generator in javascript.
 
 # Informations
 
