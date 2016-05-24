@@ -22,6 +22,13 @@
           <h2>A name generator in javascript</h2>
         </header>
 
+
+        <section id="main_content">
+          <div id="result"></div>
+        </section>
+  
+        <hr>
+
         <section id="downloads" class="clearfix">
           <a href="https://github.com/PanArnaud/valyrian/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
           <a href="https://github.com/PanArnaud/valyrian/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
@@ -32,42 +39,42 @@
 
         <section id="main_content">
           <h3>
-<a id="welcome-to-valyrian" class="anchor" href="#welcome-to-valyrian" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to valyrian</h3>
+          <a id="welcome-to-valyrian" class="anchor" href="#welcome-to-valyrian" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to valyrian</h3>
 
-<p>Generate cool and unique names with javascript</p>
+          <p>Generate cool and unique names with javascript</p>
 
-<h3>
-<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h3>
+          <h3>
+          <a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h3>
 
-<pre><code>var val = new Valyrian(2, 4);
-val.generateNames();
-</code></pre>
+          <pre><code>var val = new Valyrian(2, 4);
+          val.generateNames();
+          </code></pre>
 
-<p>The <strong>generatesNames(sylMin, sylMax);</strong> function can accept 2 arguments :</p>
+          <p>The <strong>generatesNames(sylMin, sylMax);</strong> function can accept 2 arguments :</p>
 
-<ul>
-<li>
-<strong>sylMin</strong>: set the minimum syllables in your names (Default: 2)</li>
-<li>
-<strong>sylMax</strong>: set the maximum syllables in your names (Default: 3)</li>
-</ul>
+          <ul>
+          <li>
+          <strong>sylMin</strong>: set the minimum syllables in your names (Default: 2)</li>
+          <li>
+          <strong>sylMax</strong>: set the maximum syllables in your names (Default: 3)</li>
+          </ul>
 
-<p>You can change how many names you want by editing:</p>
+          <p>You can change how many names you want by editing:</p>
 
-<pre><code>Valyrian.prototype.generateNames = function(nb) {
-    var names = [],
-    nb    = nb || 10; // Here
+          <pre><code>Valyrian.prototype.generateNames = function(nb) {
+              var names = [],
+              nb    = nb || 10; // Here
 
-    for (var i = 0; i &lt; nb; ++i) {
-    names.push(this.createNewName(this.sylMin, this.sylMax));
-    }
-    this.names = names;
-    return this.names;
-};
-</code></pre>
+              for (var i = 0; i &lt; nb; ++i) {
+              names.push(this.createNewName(this.sylMin, this.sylMax));
+              }
+              this.names = names;
+              return this.names;
+          };
+          </code></pre>
 
-<h3>
-<a id="feel-free-to-fork-it-" class="anchor" href="#feel-free-to-fork-it-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feel free to fork it !</h3>
+          <h3>
+          <a id="feel-free-to-fork-it-" class="anchor" href="#feel-free-to-fork-it-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feel free to fork it !</h3>
         </section>
 
         <footer>
@@ -79,4 +86,10 @@ val.generateNames();
       </div>
     </div>
   </body>
+  <script type="text/javascript" src="javascript/valyrian.js">
+  alert('go');
+    var val = new Valyrian(2, 5);
+    val.generateNames(5);
+    val.appendTo(document.getElementById("result"));
+  </script>
 </html>
